@@ -13,4 +13,14 @@ Examples:
 
 
 def remove_duplicated_words(line: str) -> str:
-    ...
+    seen = set()
+    result = []
+    for l in line.split(" "):
+        if l not in seen:
+            result.append(l)
+            seen.add(l)
+    return "'" + " ".join(result) + "'"
+
+print(remove_duplicated_words('cat cat dog 1 dog 2'))
+print(remove_duplicated_words('cat cat cat'))
+print(remove_duplicated_words('1 2 3'))
