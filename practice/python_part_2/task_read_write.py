@@ -31,4 +31,4 @@ def combine_file_values(input_folder, result_file = "result.txt"):
     with open(result_file, "w") as f:
             f.write(", ".join(values))
 
-combine_file_values(folder)
+# combine_file_values(folder)
