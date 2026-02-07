@@ -48,8 +48,9 @@ class Student:
         current_time = datetime.datetime.now()
         if current_time < homework.deadline:
             return homework
-        print("You are late") 
-        return None
+        else:
+            print("You are late\n") 
+            return None
     
 
 
