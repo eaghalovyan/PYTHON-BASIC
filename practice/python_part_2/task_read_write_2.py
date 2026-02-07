@@ -12,7 +12,7 @@ Example:
 """
 
 
-def generate_words(n=20):
+def generate_words(n):
     import string
     import random
 
@@ -22,6 +22,7 @@ def generate_words(n=20):
         words.append(word)
 
     return words
+
 words = generate_words(n=3)
 with open("result2.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(words))
