@@ -18,19 +18,20 @@ Examples:
 
 
 def read_numbers(n: int) -> str:
-    sum = 0
+    total = 0
     num_count = 0
     for _ in range(n):
         num = input("enter number ")
         try:
             num = float(num)
-            sum += num
+            total += num
             num_count += 1
         except ValueError:
             pass
     if num_count > 0:
-        print (f" Avg: {sum/num_count:.2f}")
+        return f"Avg:{total/num_count:.2f}"
     else: 
-        print("No numbers entered")
+        return "No numbers entered"
 
-read_numbers(5)
+# if __name__ == "__main__":
+#     read_numbers(5)
