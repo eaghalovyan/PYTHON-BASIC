@@ -13,9 +13,24 @@ import re
 
 
 def is_http_domain(domain: str) -> bool:
-    ...
+    pattern = r'^https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/?$'
+    return  bool(re.fullmatch(pattern, domain))
+
+
 
 
 """
 write tests for is_http_domain function
 """
+import pytest
+
+@pytest.mark.parametrize(
+    "domain, result",
+    [
+       ('http://wikipedia.org', True),
+       ('https://ru.wikipedia.org/', True),
+       ('griddynamics.com', False), 
+    ]
+)
+def test_is_http_domain(domain, result):
+    assert is_http_domain(domain) == result
