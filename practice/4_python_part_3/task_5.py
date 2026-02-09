@@ -6,10 +6,14 @@ Examples:
      200, 'response data'
 """
 from typing import Tuple
+from urllib.request import urlopen
 
 
 def make_request(url: str) -> Tuple[int, str]:
-    ...
+    with urlopen(url) as response:
+        status = response.getcode()
+        response_data = response.read().decode('utf-8')
+        return status, response_data
 
 
 """
@@ -24,3 +28,47 @@ Example:
     >>> m.method2()
     b'some text'
 """
+
+
+import pytest
+from unittest.mock import MagicMock, patch
+
+def test_make_request():
+    mock_response = MagicMock()
+    mock_response.getcode.return_value = 200
+    mock_response.read.return_value = b'response data'
+    mock_response.__enter__.return_value = mock_response
+
+    with patch(__name__ + '.urlopen', return_value = mock_response) as mock_urlopen:
+        status, data = make_request("https://example.com")
+
+        assert status == 200
+        assert data == 'response data'
+
+
+
+# without patch
+# import pytest
+# from unittest.mock import MagicMock
+
+# def test_make_request():
+#     global urlopen
+#     original_urlopen = urlopen
+#     try:
+#         mock_response = MagicMock()
+#         mock_response.getcode.return_value = 200
+#         mock_response.read.return_value = b'response data'
+
+#         mock_response.__enter__.return_value = mock_response
+#         mock_response.__exit__.return_value = None
+
+#         mock_urlopen = MagicMock(return_value = mock_response)
+#         urlopen = mock_urlopen
+#         status, data = make_request("https://example.com")
+
+#         assert status == 200
+#         assert data == 'response data'
+
+#     finally:
+#         urlopen = original_urlopen
+
