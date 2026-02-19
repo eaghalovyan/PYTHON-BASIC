@@ -15,18 +15,36 @@ Example:
 """
 
 import argparse
-
+import json
+from faker import Faker
 
 def print_name_address(args: argparse.Namespace) -> None:
-    ...
+    fake = Faker()
+    fields = {}
+    for item in args.extra:
+        if item.startswith("-") and "=" in item:
+            key, provider = item.lstrip("-").split("=", 1)
+            fields[key] = provider
+
+    for _ in range (args.number):
+        output = {}
+        for field_name, provider_name in fields.items():
+            try:
+                method = getattr(fake, provider_name)
+                output[field_name] = method()
+            except AttributeError:
+                output[field_name] = f"Error: Provider not found"
+
+        print(json.dumps(output))
 
 
-"""
-Write test for print_name_address function
-Use Mock for mocking args argument https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock
-Example:
-    >>> m = Mock()
-    >>> m.method.return_value = 123
-    >>> m.method()
-    123
-"""
+if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description="Generate fake data dictionaries.")
+        parser.add_argument("number", type = int, help = "Number of instance to generate")
+        args, extra_args = parser.parse_known_args()
+
+        args.extra = extra_args
+        print_name_address(args)
+
+
+
