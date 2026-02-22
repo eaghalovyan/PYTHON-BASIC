@@ -1,0 +1,40 @@
+================================================ 5 stocks with most youngest CEOs ================================================
+| Name                           | Code       | Country         | Employees    | CEO Name                                      | CEO Year Born |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Figma, Inc.                    | FIG        | United States   | 1,886        | Mr. Dylan  Field                              | 34       |
+| Snap Inc.                      | SNAP       | United States   | 5,261        | Mr. Evan T. Spiegel                           | 35       |
+| IREN Limited                   | IREN       | Australia       | 257          | Mr. William  Roberts                          | 36       |
+| Denison Mines Corp.            | DNN        | Canada          | N/A          | Mr. David Daniel Cates C.A., C.P.A., MAcc     | 44       |
+| Opendoor Technologies Inc.     | OPEN       | United States   | N/A          | Ms. Christina  Schwartz                       | 46       |
+
+
+=============================================== 10 stocks with best 52-Week Change ===============================================
+| Name                           | Code       | 52-Week Change  | Total Cash      |
+-----------------------------------------------------------------------------------
+| Ondas Inc.                     | ONDS       | 811.82%         | 1.23            |
+| IREN Limited                   | IREN       | 293.5%          | 9.81            |
+| Opendoor Technologies Inc.     | OPEN       | 254.61%         | 1               |
+| ImmunityBio, Inc.              | IBRX       | 170.19%         | 0.26            |
+| Denison Mines Corp.            | DNN        | 161.94%         | 0.54            |
+| CoreWeave, Inc.                | CRWV       | 123.13%         | 3.9             |
+| Transocean Ltd.                | RIG        | 95.8%           | 0.56            |
+| Intel Corporation              | INTC       | 81.75%          | 7.49            |
+| Alphabet Inc.                  | GOOGL      | 75.72%          | 10.48           |
+| Nokia Oyj                      | NOK        | 58.57%          | 1.15            |
+
+
+=============================================== 10 largest holds of Blackrock Inc ================================================
+| Name                           | Code       | Shares          | Date Reported   | % Out           | Value           |
+-----------------------------------------------------------------------------------------------------------------------
+| NVIDIA Corporation             | NVDA       | 1.94B           | Dec 31, 2025    | 8.00%           | 368974575877.0  |
+| Apple Inc.                     | AAPL       | 1.15B           | Dec 31, 2025    | 7.86%           | 305501443603.0  |
+| Amazon.com, Inc.               | AMZN       | 734.38M         | Dec 31, 2025    | 6.84%           | 154299713233.0  |
+| Alphabet Inc.                  | GOOGL      | 441.99M         | Dec 31, 2025    | 7.59%           | 139217335643.0  |
+| Tesla, Inc.                    | TSLA       | 209.56M         | Dec 31, 2025    | 5.58%           | 86302568945.0   |
+| Palantir Technologies Inc.     | PLTR       | 193.33M         | Dec 31, 2025    | 8.87%           | 26145610403.0   |
+| Intel Corporation              | INTC       | 432.16M         | Dec 31, 2025    | 8.65%           | 19062393660.0   |
+| Pfizer Inc.                    | PFE        | 493.06M         | Dec 31, 2025    | 8.67%           | 13140116183.0   |
+| Ford Motor Company             | F          | 350.74M         | Dec 31, 2025    | 8.95%           | 4913872313.0    |
+| Kenvue Inc.                    | KVUE       | 159.55M         | Dec 31, 2025    | 8.33%           | 2986786972.0    |
+
+
