@@ -2,7 +2,7 @@ import os
 import json
 import statistics
 import xml.etree.ElementTree as ET
-
+from tests.validate_xml import check_result
 
 
 
@@ -48,20 +48,25 @@ def process_weather_data(source_dir, output_file):
     summary.set("mean_temp", str(country_mean_temp))
     summary.set("mean_wind_speed", str(country_mean_wind_speed))
     summary.set("coldest_place", str(coldest_place))
-    summary.set("warmiest_place", str(warmest_place))
+    summary.set("warmest_place", str(warmest_place))
     summary.set("windiest_place", str(windies_place))
 
     city_elements = ET.SubElement(root, "cities")
     for name, stats in all_cities.items():
-        city_tag = ET.SubElement(city_elements, name)
+        clean_name = name.replace(" ", "_")
+        city_tag = ET.SubElement(city_elements, clean_name)
+        
         for key, value in stats.items():
             city_tag.set(key, str(value))
 
 
-    xml_string = ET.tostring(root, encoding = 'unicode')
+    ET.indent(root, space="    ", level=0)
+    tree = ET.ElementTree(root)
+    tree.write(output_file, encoding='utf-8', xml_declaration=True)
+    # xml_string = ET.tostring(root, encoding = 'unicode')
     
-    with open(output_file, "w", encoding='utf-8') as f:
-        f.write(xml_string)
+    # with open(output_file, "w", encoding='utf-8') as f:
+    #     f.write(xml_string)
 
 
 if __name__ == "__main__":
@@ -74,3 +79,5 @@ if __name__ == "__main__":
         print(f"XML report generated: {output_xml}")
     else:
         print(f"Error: Directory {source_dir} not found.") 
+
+    check_result(output_xml)
