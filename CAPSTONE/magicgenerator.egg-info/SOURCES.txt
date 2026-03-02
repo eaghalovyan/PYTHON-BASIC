@@ -1,0 +1,9 @@
+setup.py
+generator_package/data_utils.py
+generator_package/generator.py
+generator_package/test_generator.py
+magicgenerator.egg-info/PKG-INFO
+magicgenerator.egg-info/SOURCES.txt
+magicgenerator.egg-info/dependency_links.txt
+magicgenerator.egg-info/entry_points.txt
+magicgenerator.egg-info/top_level.txt
